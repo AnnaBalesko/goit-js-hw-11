@@ -4,10 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "build": "vite build --base=/goit-js-hw-11/",
-    "preview": "vite preview",
-    "push": "git add .&& git commit -m 'update'&& git push"
+    "dev": "vite",
+    "build": "vite build --base=/vanilla-app-template/",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "glob": "^11.0.0",
