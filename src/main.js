@@ -43,7 +43,6 @@ form.addEventListener('submit', e => {
         });
         return;
       }
-
       createGallery(data.hits);
       input.value = '';
     })

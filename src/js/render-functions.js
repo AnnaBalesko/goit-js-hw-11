@@ -6,6 +6,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 export let galleryItem = new SimpleLightbox('.gallery-item a', {
   captionsData: 'alt',
   captionDelay: 250,
+  close: true,
+  docClose: false,
 });
 
 const gallery = document.querySelector('.gallery');
@@ -14,10 +16,11 @@ function imgTemplate(img) {
   return `<li class='gallery-item'>
     <a class='gallery-link' href=${img.webformatURL}>
     <img class='gallery-image' src='${img.largeImageURL}' alt='${img.tags}'/>
-    <p><strong>Likes:</strong> ${img.likes}</p>
-    <p><strong>Views:</strong> ${img.views}</p>
-    <p><strong>Comments:</strong> ${img.comments}</p>
-    <p><strong>Downloads:</strong> ${img.downloads}</p></a></li>`;
+    <div class='img'>
+    <p><strong>Likes</strong> ${img.likes}</p>
+    <p><strong>Views</strong> ${img.views}</p>
+    <p><strong>Comments</strong> ${img.comments}</p>
+    <p><strong>Downloads</strong> ${img.downloads}</p></div></a></li>`;
 }
 
 export function createGallery(images) {
