@@ -3,7 +3,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export let galleryItem = new SimpleLightbox('.gallery-item a', {
+export let galleryItem = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
   close: true,
@@ -14,8 +14,8 @@ const gallery = document.querySelector('.gallery');
 
 function imgTemplate(img) {
   return `<li class='gallery-item'>
-    <a class='gallery-link' href=${img.webformatURL}>
-    <img class='gallery-image' src='${img.largeImageURL}' alt='${img.tags}'/>
+    <a class='gallery-link' href=${img.largeImageURL}>
+    <img class='gallery-image' src='${img.webformatURL}' alt='${img.tags}'/>
     <div class='img'>
     <p><strong>Likes</strong> ${img.likes}</p>
     <p><strong>Views</strong> ${img.views}</p>
@@ -26,7 +26,7 @@ function imgTemplate(img) {
 export function createGallery(images) {
   const markup = images.map(imgTemplate).join('');
   gallery.insertAdjacentHTML('beforeend', markup);
-  galleryItem.on('show.simplelightbox');
+  
   galleryItem.refresh();
   return markup;
 }
